@@ -1,0 +1,48 @@
+[package]
+name = "onlivfe"
+version = "0.0.0-alpha.0"
+edition = "2021"
+authors = ["ljoonal"]
+description = "A lightweight application that lists social (VR) platforms' peeps"
+repository = "https://github.com/onlivfe/desktop"
+categories = ["games"]
+publish = false
+build = "build.rs"
+rust-version = "1.57"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-alpha.0", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.0.0-alpha.2", features = ["api-all"] }
+
+neos = { version = "0.4.0-alpha.0", features = ["api_client"] }
+chilloutvr = { version = "0.0.0-alpha.1", features = [] }
+time = { version = "0.3.13", features = ["serde-well-known", "macros"] }
+
+
+[profile.dev.package."*"]
+# Optimize external packages by default even for dev builds for perf
+opt-level = 2
+
+[profile.release]
+# Optimizing mostly for size.
+opt-level = "s"
+codegen-units = 1
+lto = "fat"
+panic = "abort"
+strip = true
+
+[features]
+# by default Tauri runs in production mode
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+default = ["custom-protocol"]
+# this feature is used used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
+custom-protocol = ["tauri/custom-protocol"]
+
+

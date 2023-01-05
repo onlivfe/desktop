@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=VR Peeps
+Comment=An app that lists your social VR games' friends
+Exec=onlivfe
+Terminal=false
+#Icon=com.onlivfe
+Categories=Utility;Game;Monitor;
