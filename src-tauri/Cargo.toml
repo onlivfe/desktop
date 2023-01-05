@@ -1,5 +1,5 @@
 [package]
-name = "onlivfe"
+name = "onlivfe-desktop"
 version = "0.0.0-alpha.0"
 edition = "2021"
 authors = ["ljoonal"]
@@ -20,10 +20,8 @@ serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "2.0.0-alpha.2", features = ["api-all"] }
 
-neos = { version = "0.4.0-alpha.0", features = ["api_client"] }
-chilloutvr = { version = "0.0.0-alpha.1", features = [] }
-time = { version = "0.3.13", features = ["serde-well-known", "macros"] }
-
+[dependencies.onlivfe]
+git= "https://github.com/onlivfe/core.git"
 
 [profile.dev.package."*"]
 # Optimize external packages by default even for dev builds for perf
