@@ -1,26 +1,33 @@
 {
   "name": "onlivfe",
-  "private": true,
+  "description": "Onlivfe is tool that allows for listing your friends quickly on different platforms, mainly social VR, without having to actually open the actual platform's game/interface programs individually.",
   "version": "0.0.0",
-  "type": "module",
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.26",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4",
+    "typescript": "4.9.4"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "tauri": "tauri"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.2.0",
+    "next": "^13.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "devDependencies": {
-    "@tauri-apps/cli": "^1.2.2",
-    "@types/node": "^18.7.10",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^3.0.0",
-    "typescript": "^4.6.4",
-    "vite": "^4.0.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onlivfe/desktop.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/onlivfe/desktop/issues"
+  },
+  "homepage": "https://github.com/onlivfe/desktop#readme"
 }
