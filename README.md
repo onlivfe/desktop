@@ -20,7 +20,7 @@ If you're paranoid about the security or just really techy, We welcome you to [b
 ## License
 
 To be determined.
-<!--
+
 Note that the license is [AGPL](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)).
 This is mainly meant to prevent anyone from commercializing this application.
 
@@ -30,7 +30,6 @@ In addition you'll need to provide the source code for any remote clients of the
 You could technically sell it, but you'd still need to give out the source code if asked for it as well as build instructions, at which point, why would anyone pay you for it if they can just build it for free?
 
 This isn't legal advice of course, just my interpretation of the license.
--->
 
 ## Development
 
