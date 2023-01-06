@@ -31,5 +31,9 @@
   "bugs": {
     "url": "https://github.com/onlivfe/desktop/issues"
   },
-  "homepage": "https://github.com/onlivfe/desktop#readme"
+  "homepage": "https://github.com/onlivfe/desktop#readme",
+  "contributors": [
+    "ljoonal",
+    "Kyle Barr"
+  ]
 }
