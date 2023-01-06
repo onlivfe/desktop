@@ -27,7 +27,7 @@
     "type": "git",
     "url": "git+https://github.com/onlivfe/desktop.git"
   },
-  "license": "UNLICENSED",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/onlivfe/desktop/issues"
   },
