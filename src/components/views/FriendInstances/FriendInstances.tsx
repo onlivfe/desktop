@@ -3,7 +3,7 @@ import FriendInstanceGrid from "./FriendInstanceGrid";
 
 function FriendInstances() {
   return (
-    <ViewContainer>
+    <ViewContainer title="Friends' Instances">
       <FriendInstanceGrid />
     </ViewContainer>
   )
