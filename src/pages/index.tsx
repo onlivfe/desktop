@@ -1,5 +1,14 @@
+import { LeftSidebar, RightSidebar } from "components";
+import { FriendInstances } from "components/views";
+
 function Home() {
-  return <div className="text-red-500">Hi :3</div>
+  return (
+    <div className="flex h-100">
+      <LeftSidebar />
+      <FriendInstances />
+      <RightSidebar />
+    </div>
+  )
 }
 
 export default Home;
