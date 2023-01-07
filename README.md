@@ -6,20 +6,7 @@ Onlivfe is tool that allows for listing your friends quickly on different platfo
 
 This is very early in progress, there aren't any installable packages yet.
 
-### Smart Screen
-
-Edge and Chrome apparently treat all unsigned executables as viruses.
-Getting a trusted signing certificate would cost a lot of money, which we're not doing for a hobby project.
-
-There's a decent chance that you can click on "Show more" type of buttons to manage to still download the self-signed executable.
-You could also use Firefox with download scanning disabled.
-Or you could completely disable smart screen (We wouldn't recommend it though).
-
-If you're paranoid about the security or just really techy, We welcome you to [build the app from source](#building) yourself.
-
 ## License
-
-To be determined.
 
 Note that the license is [AGPL](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)).
 This is mainly meant to prevent anyone from commercializing this application.
@@ -33,13 +20,15 @@ This isn't legal advice of course, just my interpretation of the license.
 
 ## Development
 
-If you encounter bugs or have any other feedback, you can find me `ljoonal#2847` in the NeosVR/ChilloutVR discord as well as the Neos Modding discord server.
+If you encounter bugs or have any other feedback, you can create an issue.
+Additionally, [GitHub projects](https://github.com/orgs/onlivfe/projects/1) may be used to track progress towards goals, like new features.
 
 ### Requirements
 
 Basic requirements:
 
-- [Git](https://git-scm.com)
+- [Git](https://git-scm.com/)
+- [NodeJS](https://nodejs.org/)
 - [Rust](https://www.rust-lang.org/)
 
 ### Recommended IDE Setup
