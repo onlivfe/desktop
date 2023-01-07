@@ -1,4 +1,4 @@
-import FriendInstances from "./FriendInstances";
+import FriendInstances from "./FriendInstances/FriendInstances";
 
 export {
   FriendInstances

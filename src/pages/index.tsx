@@ -3,7 +3,7 @@ import { FriendInstances } from "components/views";
 
 function Home() {
   return (
-    <div className="flex h-100">
+    <div className="flex h-screen overflow-clip">
       <LeftSidebar />
       <FriendInstances />
       <RightSidebar />
