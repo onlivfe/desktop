@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "./fonts/fira.css";
+@import "./fonts/fira-sans/fira.css";
 
 @layer base {
   html {
