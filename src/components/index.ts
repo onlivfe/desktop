@@ -1,5 +1,5 @@
 import LeftSidebar from "./LeftSidebar"
-import RightSidebar from "./RightSidebar"
+import RightSidebar from "./RightSidebar/RightSidebar"
 
 export {
   LeftSidebar,

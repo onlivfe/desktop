@@ -18,3 +18,12 @@ body {
 .text-shadow-sm {
   text-shadow: 1px 1px 1px rgba(0,0,0,1);
 }
+
+.hide-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.hide-scroll::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
