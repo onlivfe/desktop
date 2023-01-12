@@ -3,7 +3,7 @@ import { FriendListing } from "./subcomponents";
 import { User } from "./subcomponents/FriendListing";
 
 function RightSidebar() {
-  const [friends, setFriends] = useState<User | any>((new Array(10)).fill({ name: "best frand!", status: "online" }));
+  const [friends, setFriends] = useState<User | any>((new Array(10)).fill({ name: "Best FRAAND!", status: "online" }));
 
   return (
     <div className="overflow-hidden bg-zinc-900 min-w-[18rem] max-w-[24rem] h-full resize-x rtl border-l-2 border-zinc-600">

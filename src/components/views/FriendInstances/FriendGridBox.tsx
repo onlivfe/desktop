@@ -6,7 +6,7 @@ function FriendGridBox({ user }) {
       <div className="h-full w-8 bg-zinc-700 shrink-0 grow-0">
         <img className="bg-cover h-full" src={`https://picsum.photos/${Math.ceil(Math.random() * 50) + 400}`} />
       </div>
-      <div className="ml-2 mt-[0.2rem] truncate">
+      <div className="ml-2 mt-[0.4rem] pr-2 truncate text-sm font-light">
         {user.name}
       </div>
     </div>
