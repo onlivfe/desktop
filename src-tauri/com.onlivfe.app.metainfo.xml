@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2022 ljoonal -->
 <component type="desktop-application">
-	<id>com.onlivfe</id>
+	<id>com.onlivfe.app</id>
 	<name>Onlivfe</name>
 	<summary>A lightweight application that lists social (VR) platforms' peeps</summary>
 
@@ -10,11 +10,11 @@
 			having to actually open the platform.</p>
 	</description>
 
-	<launchable type="desktop-id">com.onlivfe.desktop</launchable>
+	<launchable type="desktop-id">com.onlivfe.app.desktop</launchable>
 
 	<url type="homepage">https://github.com/onlivfe/desktop</url>
 	<developer_name>ljoonal</developer_name>
-	<update_contact>flatpak.vrpeeps_AT_ljoonal.xyz</update_contact>
+	<update_contact>flatpak.onlivfe_AT_ljoonal.xyz</update_contact>
 
 	<content_rating type="oars-1.0">
 		<content_attribute id="social-chat">moderate</content_attribute>
