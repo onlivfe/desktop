@@ -3,23 +3,26 @@
   "description": "Onlivfe is tool that allows for listing your friends quickly on different platforms, mainly social VR, without having to actually open the actual platform's game/interface programs individually.",
   "version": "0.0.0",
   "devDependencies": {
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.26",
+    "@tauri-apps/cli": "^1.2.3",
+    "@types/node": "18.14.0",
+    "@types/react": "18.0.28",
     "autoprefixer": "^10.4.13",
-    "eslint": "8.31.0",
-    "eslint-config-next": "13.1.1",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4",
-    "typescript": "4.9.4"
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "typescript": "4.9.5"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
+    "tauri": "tauri",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^13.1.1",
+    "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
