@@ -6,16 +6,21 @@
   <summary>A lightweight application that lists social (VR) platforms' peeps</summary>
 
   <description>
-    <p>Onlivfe
-      is tool that allows for listing your social (VR) platforms' friends quickly, without
-      having to actually open the platform.</p>
+    <p>
+      Onlivfe is tool that allows for listing your social (VR) platforms' friends quickly,
+      without having to actually open the platform.
+    </p>
   </description>
 
-  <launchable type="desktop-id">com.onlivfe.app.desktop</launchable>
+  <launchable type="desktop-id">
+    com.onlivfe.app.desktop
+  </launchable>
 
   <url type="homepage">https://github.com/onlivfe/desktop</url>
   <developer_name>ljoonal</developer_name>
-  <update_contact>flatpak.onlivfe_AT_ljoonal.xyz</update_contact>
+  <update_contact>
+    flatpak.onlivfe_AT_ljoonal.xyz
+  </update_contact>
 
   <content_rating type="oars-1.0">
     <content_attribute id="social-chat">moderate</content_attribute>
@@ -23,6 +28,7 @@
 
   <provides>
     <binary>
-      onlivfe</binary>
+      onlivfe
+    </binary>
   </provides>
 </component>
