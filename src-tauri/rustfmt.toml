@@ -1,0 +1,17 @@
+version = "Two"
+max_width = 80
+use_small_heuristics = "Max" # Replace with the one below when rustfmt hits 2.0
+#width_heuristics = "Max"
+tab_spaces = 2
+newline_style = "Unix"
+imports_layout = "HorizontalVertical"
+trailing_comma = "Vertical"
+use_field_init_shorthand = true
+use_try_shorthand = true
+wrap_comments = true
+fn_params_layout = "Compressed"
+fn_single_line = true
+reorder_impl_items = true
+group_imports = "StdExternalCrate"
+error_on_unformatted = true
+format_code_in_doc_comments = true
