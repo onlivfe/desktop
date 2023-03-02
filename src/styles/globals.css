@@ -1,7 +1,36 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./fonts/fira-sans/fira.css";
+
+@layer base {
+  html {
+    font-family: Fira Sans, sans-serif;
+  }
+}
 
 body {
   background-color: black;
+  color: white;
+}
+
+.rtl {
+  direction: rtl
+}
+
+.ltr {
+  direction: ltr
+}
+
+.text-shadow-sm {
+  text-shadow: 1px 1px 1px rgba(0,0,0,1);
+}
+
+.hide-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.hide-scroll::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
 }
