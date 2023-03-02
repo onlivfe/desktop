@@ -43,4 +43,4 @@ Start off by cloning the project with git.
 git clone --recurse-submodules https://github.com/onlivfe/desktop
 ```
 
-Then open the project folder in your terminal, run `yarn` and after the packages have been installed, you can run `yarn tauri dev` for a local dev build.
+Then open the project folder in your terminal, run `npm i` and after the packages have been installed, you can run `npm run tauri dev` for a local dev build.
