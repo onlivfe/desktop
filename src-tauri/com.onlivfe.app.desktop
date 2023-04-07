@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Onlivfe
+Comment=Contacts + social platforms + identity management
+Exec=onlivfe
+Terminal=false
+#Icon=com.onlivfe.app
+Categories=Utility;Game;Monitor;
