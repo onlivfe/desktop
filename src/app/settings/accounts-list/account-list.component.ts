@@ -7,19 +7,29 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
-  selector: 'account-list',
+  selector: 'app-account-list',
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.css'],
   standalone: true,
-  imports: [CommonModule, MatListModule, MatButtonModule, MatTooltipModule, MatIconModule, MatDividerModule, MatMenuModule],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [
+    CommonModule,
+    MatListModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatIconModule,
+    MatDividerModule,
+    MatMenuModule,
+    NgOptimizedImage,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountListComponent {
-  constructor(protected accountsAuthService: AccountsAuthService) { }
+  constructor(protected accountsAuthService: AccountsAuthService) {}
 
   protected logout(account: AccountAuth) {
-
+    // TODO
   }
 }

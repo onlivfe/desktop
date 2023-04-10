@@ -4,6 +4,7 @@
     "rust-lang.rust-analyzer",
     "arcanis.vscode-zipfs",
     "dbaeumer.vscode-eslint",
-    "angular.ng-template"
+    "angular.ng-template",
+    "esbenp.prettier-vscode"
   ]
 }

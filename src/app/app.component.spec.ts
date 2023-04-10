@@ -1,14 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        AppComponent
-      ]
+      imports: [RouterTestingModule, AppComponent, NavComponent],
     }).compileComponents();
   });
 
@@ -18,10 +16,13 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render nav settings button', () => {
+  it('should render nav buttons', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('nav')?.textContent).toContain('settings');
+    console.log(compiled);
+    expect(
+      compiled.querySelectorAll('mat-toolbar .mat-mdc-button-base').length
+    ).toBeGreaterThan(1);
   });
 });

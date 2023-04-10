@@ -11,7 +11,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   </mat-sidenav-container>`,
   standalone: true,
   imports: [RouterOutlet, NavComponent, MatSidenavModule],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-}
+export class AppComponent {}

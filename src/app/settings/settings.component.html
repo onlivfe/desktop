@@ -4,9 +4,9 @@
   <mat-label i18n="@@lang-picker">Language picker label</mat-label>
   <mat-select [value]="currentLocale" (selectionChange)="switchLocale($event)">
     <mat-option *ngFor="let locale of locales" [value]="locale[0]">
-      {{locale[1]}}
+      {{ locale[1] }}
     </mat-option>
   </mat-select>
 </mat-form-field>
 
-<account-list></account-list>
+<app-account-list></app-account-list>
