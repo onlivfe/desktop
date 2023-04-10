@@ -1,0 +1,16 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "friends": "Friends",
+    "instances": "Instances",
+    "settings": "Settings",
+    "exit-window": "Close the window",
+    "exit-window-toast": "Closing the window failed (running in a browser?)",
+    "platform-type": "Platform",
+    "remove-account-auth": "Remove account",
+    "add-account": "Add account",
+    "lang-picker": "Language",
+    "lang-en": "English",
+    "lang-fi": "Suomi (Finnish)"
+  }
+}
