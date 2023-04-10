@@ -28,4 +28,4 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 18
-      - run: yarn install --immutable --immutable-cache --check-cache && yarn test --no-watch --no-progress
+      - run: yarn install --immutable --immutable-cache --check-cache && yarn test --no-watch --no-progress --browsers Chrome
