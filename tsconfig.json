@@ -21,7 +21,10 @@
     "lib": [
       "ES2022",
       "DOM"
-    ]
+    ],
+    "paths": {
+      "bindings/*": ["./src-tauri/bindings/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

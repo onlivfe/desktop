@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
 import { LOCALES, changeLocale } from '../../locale.loader';
 import { MatOptionModule } from '@angular/material/core';
 import { AccountListComponent } from './accounts-list/account-list.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -27,6 +30,9 @@ import { AccountListComponent } from './accounts-list/account-list.component';
     FormsModule,
     ReactiveFormsModule,
     MatOptionModule,
+    MatButtonModule,
+    MatIconModule,
+    RouterModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

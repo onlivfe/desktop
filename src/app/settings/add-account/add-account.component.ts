@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AccountsAuthService } from '../../accounts-auth.service';
 
 @Component({
   selector: 'app-add-account',
@@ -10,4 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatIconModule, MatButtonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddAccountComponent {}
+export class AddAccountComponent {
+  constructor(private accountsService: AccountsAuthService) {}
+  protected login(): void {
+    this.accountsService.login();
+  }
+}
