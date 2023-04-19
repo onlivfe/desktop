@@ -44,3 +44,15 @@ git clone --recurse-submodules https://github.com/onlivfe/desktop
 ```
 
 Then open the project folder in your terminal, run `yarn i` and after the packages have been installed, you can run `yarn run tauri dev` for a local dev build.
+
+### Localication
+
+See <https://angular.io/guide/i18n-common-overview>.
+Due to wanting to provide proper dynamic translations, we're using JSON files.
+The main logic of it is in [`locale.loader.ts`](./src/locale.loader.ts).
+
+To extract the translation keys, run the following and then update translations to the other files:
+
+```sh
+yarn ng extract-i18n --output-path src/assets/locale --format json
+```

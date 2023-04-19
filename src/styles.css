@@ -1,0 +1,16 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-sidenav-content {
+  height: 100vh!important;
+  display: flex!important;
+  flex-direction: column;
+}
+main {
+  flex: 1 1 100%;
+  padding: 16px;
+}

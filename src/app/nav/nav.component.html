@@ -1,0 +1,46 @@
+<mat-toolbar color="primary" class="mat-elevation-z2">
+  <a
+    routerLink="/friends"
+    routerLinkActive="active"
+    mat-icon-button
+    i18n-aria-label="@@friends"
+    i18n-matTooltip="@@friends"
+    aria-label="Friends"
+    matTooltip="Friends"
+  >
+    <mat-icon>group</mat-icon>
+  </a>
+  <a
+    routerLink="/instances"
+    routerLinkActive="active"
+    mat-icon-button
+    i18n-aria-label="@@instances"
+    i18n-matTooltip="@@instances"
+    aria-label="Instances"
+    matTooltip="Instances"
+  >
+    <mat-icon>travel_explore</mat-icon>
+  </a>
+  <div class="spacer"></div>
+  <a
+    routerLink="/settings"
+    routerLinkActive="active"
+    mat-icon-button
+    i18n-aria-label="@@settings"
+    i18n-matTooltip="@@settings"
+    aria-label="Settings"
+    matTooltip="Settings"
+  >
+    <mat-icon>settings</mat-icon>
+  </a>
+  <button
+    (click)="exit()"
+    mat-icon-button
+    i18n-aria-label="@@exit-window"
+    i18n-matTooltip="@@exit-window"
+    aria-label="Close the window button label"
+    matTooltip="Close the window button label"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>

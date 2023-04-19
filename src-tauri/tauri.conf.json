@@ -3,8 +3,8 @@
   "build": {
     "beforeBuildCommand": "yarn run build",
     "beforeDevCommand": "yarn run dev",
-    "devPath": "http://localhost:3000",
-    "distDir": "../out"
+    "devPath": "http://localhost:4200",
+    "distDir": "../dist/ui"
   },
   "package": {
     "productName": "Onlivfe",
@@ -12,7 +12,10 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "all": false,
+      "window": {
+        "close": true
+      }
     },
     "bundle": {
       "active": true,

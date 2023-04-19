@@ -4,67 +4,36 @@
 #![deny(clippy::all)]
 #![forbid(unsafe_code)]
 #![deny(clippy::cargo)]
-#![warn(missing_docs)]
 #![deny(rustdoc::invalid_html_tags)]
-#![warn(rustdoc::missing_doc_code_examples)]
 #![warn(clippy::pedantic)]
 #![warn(clippy::nursery)]
 // Not much can be done about it :/
 #![allow(clippy::multiple_crate_versions)]
+// Better to be able to name types properly for TS
+#![allow(clippy::module_name_repetitions)]
 #![cfg_attr(
   all(not(debug_assertions), target_os = "windows"),
   windows_subsystem = "windows"
 )]
+// We're using the same that other onlivfe crates do
+#![allow(clippy::wildcard_dependencies)]
 
-use ts_rs::TS;
+type Interface =
+  onlivfe_wrapper::Onlivfe<onlivfe_cache_store::OnlivfeCacheStorageBackend>;
 
-#[derive(TS)]
-#[ts(export)]
-pub enum PlatformType {
-  VRChat,
-  ChilloutVR,
-  NeosVR,
-}
-
-impl From<onlivfe::PlatformType> for PlatformType {
-  fn from(value: onlivfe::PlatformType) -> Self {
-    match value {
-      onlivfe::PlatformType::VRChat => Self::VRChat,
-      onlivfe::PlatformType::ChilloutVR => Self::ChilloutVR,
-      onlivfe::PlatformType::NeosVR => Self::NeosVR,
-    }
-  }
-}
-
-#[derive(TS)]
-#[ts(export)]
-pub struct PlatformId((PlatformType, String));
-
-impl From<onlivfe::PlatformAccountId> for PlatformId {
-  fn from(value: onlivfe::PlatformAccountId) -> Self {
-    PlatformId((PlatformType::from(value.platform()), value.id_as_string()))
-  }
-}
-
-#[derive(TS)]
-#[ts(export)]
-pub struct GenericAccount {
-  pub id: PlatformId,
-}
-
-impl From<onlivfe::PlatformAccount> for GenericAccount {
-  fn from(v: onlivfe::PlatformAccount) -> Self {
-    let id = PlatformId::from(v.id());
-    match v {
-      onlivfe::PlatformAccount::VRChat(v) => Self { id },
-      onlivfe::PlatformAccount::ChilloutVR(v) => Self { id },
-      onlivfe::PlatformAccount::NeosVR(v) => Self { id },
-    }
-  }
-}
+mod auth;
+pub use auth::*;
+mod user;
+pub use user::*;
 
 fn main() {
+  onlivfe_wrapper::init("desktop", env!("CARGO_PKG_VERSION")).unwrap();
+  let store =
+    onlivfe_cache_store::OnlivfeCacheStorageBackend::new("desktop").unwrap();
+  let interface: Interface = onlivfe_wrapper::Onlivfe::new(store).unwrap();
   tauri::Builder::default()
+    .manage(interface)
+    .invoke_handler(tauri::generate_handler![authenticated_accounts, login])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

@@ -7,8 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Output dirs
-/node_modules
 /dist
+/tmp
+/out-tsc
+/bazel-out
+/node_modules
 /out
 /build
 /src-tauri/target
@@ -30,3 +33,16 @@ pnpm-debug.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db

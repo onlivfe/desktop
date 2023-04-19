@@ -1,0 +1,16 @@
+{
+  "locale": "fi-FI",
+  "translations": {
+    "friends": "Kaverit",
+    "instances": "Instassit",
+    "settings": "Asetukset",
+    "exit-window": "Sulje ikkuna",
+    "exit-window-toast": "Ikkunan sulkeminen epäonnistui (selain ongelma?)",
+    "platform-type": "Alusta",
+    "remove-account-auth": "Kirjaudu ulos",
+    "add-account": "Lisää käyttäjätili",
+    "lang-picker": "Kieli",
+    "lang-en": "English (Englanti)",
+    "lang-fi": "Suomi"
+  }
+}

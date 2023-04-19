@@ -14,18 +14,23 @@ publish = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "2.0.0-alpha.3", features = [] }
+tauri-build = { version = "2.0.0-alpha.4", features = [] }
 
 [dependencies]
+ts-rs = "6.2"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "2.0.0-alpha.6", features = [] }
-onlivfe = { git = "https://github.com/onlivfe/core.git" }
+tauri = { version = "2.0.0-alpha.7", features = ["window-close"] }
 
-[dependencies.ts-rs]
-version = "6.2"
-default-features = false
-features = []
+onlivfe = { git = "https://github.com/onlivfe/core.git" }
+onlivfe_wrapper = { git = "https://github.com/onlivfe/core.git" }
+onlivfe_cache_store = { git = "https://github.com/onlivfe/core.git" }
+
+neos = "*"
+chilloutvr = "*"
+vrc = "*"
+
+
 
 [features]
 # by default Tauri runs in production mode

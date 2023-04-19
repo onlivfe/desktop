@@ -1,0 +1,16 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "friends": "Friends",
+    "instances": "Instances",
+    "settings": "Settings",
+    "exit-window": "Close the window button label",
+    "exit-window-toast": "Closing the window failed toast message",
+    "platform-type": "Social platform type",
+    "remove-account-auth": "Remove account / logout",
+    "add-account": "Add account header",
+    "lang-picker": "Language picker label",
+    "lang-en": "English option in language picker",
+    "lang-fi": "Finnish option in language picker"
+  }
+}

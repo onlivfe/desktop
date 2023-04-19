@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+/* https://angular.io/guide/image-directive#using-fill-mode */
+.pfp-img {
+  display: block;
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.pfp-img img {
+  object-fit: cover;
+}

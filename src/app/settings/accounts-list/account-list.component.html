@@ -1,0 +1,25 @@
+<mat-list *ngIf="accountsAuthService.accounts$ | async as authedAccounts">
+  <mat-list-item *ngFor="let account of authedAccounts; last as last">
+    <div matListItemAvatar class="pfp-img">
+      <img [ngSrc]="account.pfpUrl" fill />
+    </div>
+    <h3 matListItemTitle>{{ account.displayName }}</h3>
+    <p matListItemLine>
+      <ng-container i18n="@@platform-type">Social platform type</ng-container>:
+      {{ account.id[0] }}
+    </p>
+
+    <button
+      matListItemMeta
+      mat-icon-button
+      (click)="logout(account)"
+      i18n-aria-label="@@remove-account-auth"
+      i18n-matTooltip="@@remove-account-auth"
+      aria-label="Remove account / logout"
+      matTooltip="Remove account / logout"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+  </mat-list-item>
+</mat-list>
