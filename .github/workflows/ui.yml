@@ -36,6 +36,11 @@ jobs:
       - run: yarn install --immutable --immutable-cache
       - run: yarn lint
   test:
+    permissions:
+      actions: write
+      pull-requests: write
+      statuses: write
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
