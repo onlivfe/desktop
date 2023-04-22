@@ -53,6 +53,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
         continue-on-error: true
         run: |
+          yarn install --immutable --immutable-cache --check-cache
           mv dist/coverage-ui/ dist/coverage-ui-head
           xvfb-run yarn test --no-watch --no-progress --browsers Chrome
       - name: Report test
@@ -60,6 +61,5 @@ jobs:
         uses: ArtiomTr/jest-coverage-report-action@v2
         if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
         with:
-          skip-step: all
           coverage-file: dist/coverage-ui-head/coverage-summary.json
           base-coverage-file: dist/coverage-ui/coverage-summary.json
