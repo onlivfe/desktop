@@ -19,7 +19,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    console.log(compiled);
     expect(
       compiled.querySelectorAll('mat-toolbar .mat-mdc-button-base').length
     ).toBeGreaterThan(1);
