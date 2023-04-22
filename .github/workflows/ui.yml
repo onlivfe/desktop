@@ -48,6 +48,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
         with:
           ref: ${{ github.base_ref || 'head^1' }}
+          clean: false
       - name: Test base
         if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
         continue-on-error: true
