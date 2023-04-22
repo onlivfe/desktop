@@ -45,8 +45,8 @@ jobs:
       - run: yarn install --immutable --immutable-cache
       - name: Test
         run: xvfb-run yarn test --no-watch --no-progress --browsers Chrome
-      - name: Report test
-        uses: greatwizard/coverage-diff-action@v1
+      - name: Create coverage report
+        uses: clearlyip/code-coverage-report-action@v1
         if: ${{ ! cancelled()  }}
         id: code_coverage_report_action
         with:
