@@ -53,13 +53,14 @@ jobs:
         if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
         continue-on-error: true
         run: |
-          yarn install --immutable --immutable-cache --check-cache
-          mv dist/coverage-ui/ dist/coverage-ui-head
+          yarn install --immutable --immutable-cache
+          mv dist/coverage-ui/coverage-summary.json head.json
           xvfb-run yarn test --no-watch --no-progress --browsers Chrome
+          mv dist/coverage-ui/coverage-summary.json base.json
       - name: Report test
         # Jest and karma both use the same istanbull coverage reporters
         uses: ArtiomTr/jest-coverage-report-action@v2
         if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
         with:
-          coverage-file: dist/coverage-ui-head/coverage-summary.json
-          base-coverage-file: dist/coverage-ui/coverage-summary.json
+          coverage-file: head.json
+          base-coverage-file: base.json
