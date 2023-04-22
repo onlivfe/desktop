@@ -1,9 +1,11 @@
 name: UI
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
       - main
+
 
 jobs:
   check-cache:
@@ -34,7 +36,6 @@ jobs:
       - run: yarn install --immutable --immutable-cache
       - run: yarn lint
   test:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -45,9 +46,17 @@ jobs:
       - name: Test
         run: xvfb-run yarn test --no-watch --no-progress --browsers Chrome
       - name: Report test
-        uses: ewjoachim/coverage-comment-action@v1
+        uses: greatwizard/coverage-diff-action@v1
         if: ${{ ! cancelled()  }}
+        id: code_coverage_report_action
         with:
-          GITHUB_TOKEN: ${{ github.token }}
-          COVERAGE_FILE: dist/coverage-ui/cobertura-coverage.xml
-          MINIMUM_GREEN: 95
+          filename: 'dist/coverage-ui/cobertura-coverage.xml'
+          fail_on_negative_difference: true
+          artifact_download_workflow_names: 'UI'
+          badge: true
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: steps.code_coverage_report_action.outputs.file != '' && github.event_name == 'pull_request' && (success() || failure())
+        with:
+          recreate: true
+          path: code-coverage-results.md
