@@ -42,25 +42,11 @@ jobs:
           node-version: 20
       - run: yarn install --immutable --immutable-cache
       - name: Test
-        run: |
-          xvfb-run yarn test --no-watch --no-progress --browsers Chrome
-      - uses: actions/checkout@v3
-        if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
-        with:
-          ref: ${{ github.base_ref || 'head^1' }}
-          clean: false
-      - name: Test base
-        if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
-        continue-on-error: true
-        run: |
-          yarn install --immutable --immutable-cache
-          mv dist/coverage-ui/coverage-summary.json head.json
-          xvfb-run yarn test --no-watch --no-progress --browsers Chrome
-          mv dist/coverage-ui/coverage-summary.json base.json
+        run: xvfb-run yarn test --no-watch --no-progress --browsers Chrome
       - name: Report test
-        # Jest and karma both use the same istanbull coverage reporters
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        if: ${{ github.event_name == 'pull_request' && ! cancelled()  }}
+        uses: ewjoachim/coverage-comment-action@v1
+        if: ${{ ! cancelled()  }}
         with:
-          coverage-file: head.json
-          base-coverage-file: base.json
+          GITHUB_TOKEN: ${{ github.token }}
+          COVERAGE_FILE: dist/coverage-ui/cobertura-coverage.xml
+          MINIMUM_GREEN: 95

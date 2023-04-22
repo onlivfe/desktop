@@ -30,7 +30,7 @@ module.exports = function (config) {
       includeAllSources: true,
       reporters: [
         { type: "html" },
-        { type: "json-summary" },
+        { type: "cobertura" },
         { type: "text-summary" },
       ],
     },
