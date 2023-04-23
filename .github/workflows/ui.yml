@@ -1,8 +1,11 @@
+name: UI
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
       - main
+
 
 jobs:
   check-cache:
@@ -11,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
       # See https://yarnpkg.com/features/zero-installs#does-it-have-security-implications
       - run: yarn install --immutable --immutable-cache --check-cache
   build:
@@ -20,21 +23,46 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: yarn install --immutable --immutable-cache && yarn build
+          node-version: 20
+      - run: yarn install --immutable --immutable-cache
+      - run: yarn build
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: yarn install --immutable --immutable-cache && yarn lint
+          node-version: 20
+      - run: yarn install --immutable --immutable-cache
+      - run: yarn lint
   test:
+    permissions:
+      actions: write
+      pull-requests: write
+      statuses: write
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: yarn install --immutable --immutable-cache && xvfb-run yarn test --no-watch --no-progress --browsers Chrome
+          node-version: 20
+      - run: yarn install --immutable --immutable-cache
+      - name: Test
+        run: xvfb-run yarn test --no-watch --no-progress --browsers Chrome
+      - name: Create coverage report
+        uses: clearlyip/code-coverage-report-action@v1
+        if: ${{ ! cancelled()  }}
+        id: code_coverage_report_action
+        with:
+          filename: 'dist/coverage-ui/cobertura-coverage.xml'
+          fail_on_negative_difference: true
+          artifact_download_workflow_names: 'UI'
+          overall_coverage_fail_threshold: 50
+          badge: true
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: steps.code_coverage_report_action.outputs.file != '' && github.event_name == 'pull_request' && (success() || failure())
+        with:
+          recreate: true
+          path: code-coverage-results.md
