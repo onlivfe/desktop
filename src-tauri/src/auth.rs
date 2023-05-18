@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use ts_rs::TS;
 
-use crate::{GenericAccount, Interface, PlatformId};
+use crate::{Interface, user::{PlatformId, GenericAccount}};
 
 #[derive(TS, Serialize, Deserialize)]
 #[serde(tag = "status", content = "data")]
@@ -24,7 +24,7 @@ impl From<onlivfe::LoginError> for AuthStatus {
 }
 
 #[tauri::command]
-async fn authenticated_accounts(
+pub async fn authenticated_accounts(
   interface: tauri::State<'_, Interface>,
 ) -> Result<Vec<GenericAccount>, String> {
   let account_ids = interface.authenticated_accounts().await?;
@@ -40,7 +40,7 @@ async fn authenticated_accounts(
 }
 
 #[tauri::command]
-async fn login(
+pub async fn login(
   interface: tauri::State<'_, Interface>,
   credentials: onlivfe::LoginCredentials,
 ) -> Result<AuthStatus, String> {
